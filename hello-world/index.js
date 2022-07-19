@@ -1,7 +1,7 @@
-const { Client, GatewayIntentBits, ChannelType } = require('discord.js');
+const Discord = require('discord.js');
 
-const client = new Client({
- intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages]
+const client = new Discord.Client({
+ intents: [Discord.GatewayIntentBits.Guilds, Discord.GatewayIntentBits.GuildMessages]
 });
 
 client.login(process.env.SUPER_SECRET_TOKEN);
@@ -18,7 +18,7 @@ client.on('ready', () => {
      guild.channels.fetch().then((channels) => {
 
        // send 'Hello world!' to the first channel it sees
-       channels.find((ch) => ch.type == ChannelType.GuildText).send({
+       channels.find((ch) => ch.type == Discord.ChannelType.GuildText).send({
          content: 'Hello world!'
        });
      });
