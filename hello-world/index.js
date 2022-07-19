@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 const client = new Discord.Client({
- intents: [Discord.GatewayIntentBits.Guilds, Discord.GatewayIntentBits.GuildMessages]
+ intents: [Discord.GatewayIntentBits.Guilds]
 });
 
 client.login(process.env.SUPER_SECRET_TOKEN);
